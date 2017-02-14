@@ -1,0 +1,14 @@
+$shadow-on-drop-color: #DDDDDD;
+$primary-background-color: #FFFFFF;
+$active-color: #E8BB61;
+$icon-primary-color: #BFBFBF;
+$font-color: #000000;
+
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
