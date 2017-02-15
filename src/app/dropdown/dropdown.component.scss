@@ -3,12 +3,73 @@ $primary-background-color: #FFFFFF;
 $active-color: #E8BB61;
 $icon-primary-color: #BFBFBF;
 $font-color: #000000;
+$dropdown-width: 250px;
+$dropdown-height: calc(#{$dropdown-width} * 1.05); // so the content is always rectangular
+$primary-font-size: 25px;
 
+
+.dropdown-trigger-text {
+  width: $dropdown-width;
+  text-align: center;
+  font-size: #{$primary-font-size - 5};
+  .caret {
+    font-size: #{$primary-font-size - 3};
+  }
+}
 
 .arrow-up {
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid black;
+  margin-left: calc(#{$dropdown-width / 2} - #{$dropdown-width / 10}); // arrow is always in the middle
+  border-left: #{$dropdown-width / 10} solid transparent; // ensures proportional size to content
+  border-right: #{$dropdown-width / 10} solid transparent;
+  border-bottom: #{$dropdown-width / 10} solid black;
+}
+
+.dropdown-content {
+  width: $dropdown-width;
+  height: $dropdown-height;
+  font-size: $primary-font-size;
+  background-color: $primary-background-color;
+  border-radius: 4px;
+  padding: 5px 0;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+  .material-icons {
+    color: $shadow-on-drop-color;
+  }
+}
+
+.dropdown-content-header, .dropdown-content-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.dropdown-content-header {
+  .material-icons {
+    color: $active-color;
+    font-size: #{$primary-font-size + 5};
+    padding-right: 5px;
+  }
+}
+
+.dropdown-content-item {
+  .material-icons {
+    font-size: $primary-font-size;
+    padding-right: 10px;
+  }
+}
+
+.dropdown-content-item:hover{
+  background-color: $active-color;
+  .material-icons {
+    color: $primary-background-color;
+  }
+}
+
+hr {
+  border: 1.5px dashed $icon-primary-color;
+  margin: 0;
 }

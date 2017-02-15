@@ -1,3 +1,20 @@
-<div class="dropdown-container">
-  <div class="arrow-up"></div>
+<div *ngFor="let model of dropdownModel">
+  <div class="dropdown-trigger-text">
+    {{model.dropdownTriggerText}}
+    <span class="caret">&#9660;</span>
+  </div>
+  <div class="dropdown-container">
+    <div class="arrow-up"></div>
+    <div class="dropdown-content">
+      <div class="dropdown-content-header">
+        <i class="material-icons">add_circle</i>
+        {{model.dropdownHeaderText}}
+      </div>
+      <hr>
+      <div *ngFor="let item of model.dropdownItemArray" class="dropdown-content-item">
+        <i class="material-icons">insert_drive_file</i>
+        {{item}}
+      </div>
+    </div>
+  </div>
 </div>
