@@ -6,12 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  dropdownModel= [
-    {
-      dropdownTriggerText: 'Lorem Ipsum',
-      dropdownHeaderText: 'Add New Item',
-      dropdownItemArray: ['item1', 'item2', 'item3']
-    }
-  ]
-
+  dropdownTriggerText = 'Lorem Ipsum';
+  dropdownHeaderText = 'Add New Item';
+  dropdownItemArray = ['Lorem ipsum', 'Dolor sit amet', 'Consectetur', 'Adipiscing elit'];
 }

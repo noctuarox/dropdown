@@ -1,20 +1,24 @@
-<div *ngFor="let model of dropdownModel">
-  <div class="dropdown-trigger-text">
-    {{model.dropdownTriggerText}}
+<div class="dropdown-trigger-container">
+  <span class="dropdown-trigger-text" (click)="onTriggerTextClick()">
+    {{dropdownTriggerText}}
     <span class="caret">&#9660;</span>
-  </div>
-  <div class="dropdown-container">
+  </span>
+</div>
+<div class="dropdown-container" [@visibility]="visibility">
+  <div class="arrow-up-container">
     <div class="arrow-up"></div>
-    <div class="dropdown-content">
-      <div class="dropdown-content-header">
-        <i class="material-icons">add_circle</i>
-        {{model.dropdownHeaderText}}
-      </div>
-      <hr>
-      <div *ngFor="let item of model.dropdownItemArray" class="dropdown-content-item">
-        <i class="material-icons">insert_drive_file</i>
-        {{item}}
-      </div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-content-header">
+      <i class="material-icons">add_circle</i>
+      <span class="dropdown-content-header-text">{{dropdownHeaderText}}</span>
+    </div>
+    <hr>
+    <div *ngFor="let item of dropdownItemArray" class="dropdown-content-item">
+      <i class="material-icons">insert_drive_file</i>
+      <span class="dropdown-content-item-text">{{item}}</span>
     </div>
   </div>
+</div>
+<div *ngIf="visibility === 'shown'" class="glass" (click)="hideDropdown()">
 </div>
